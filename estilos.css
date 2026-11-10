@@ -11,14 +11,12 @@ html, body {
 }
 
 body {
-  background-image: url('espacio.png'); /* CORREGIDO */
+  background-color: #000; /* por si no carga la imagen, que no quede blanco */
+  background-image: url('./espacio.png');
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-attachment: fixed;
   background-size: cover;
-  position: relative; 
 }
-
 /* --- INFORMACIÓN PIXELADA DE BOÖTES --- */
 .texto-bootes {
   position: absolute;
