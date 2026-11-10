@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-  background-image: url('imagenes/espacio.png');
+  background-image: url('espacio.png'); /* CORREGIDO */
   background-repeat: no-repeat;
   background-position: center bottom;
   background-attachment: fixed;
@@ -22,7 +22,7 @@ body {
 /* --- INFORMACIÓN PIXELADA DE BOÖTES --- */
 .texto-bootes {
   position: absolute;
-  top: 10%; /* Posición superior */
+  top: 10%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -31,14 +31,14 @@ body {
   z-index: 8;
   width: 90%;
   max-width: 750px;
-  pointer-events: none; /* Para no bloquear clics */
+  pointer-events: none;
 }
 
 .texto-bootes h1 {
   font-size: 20px;
   line-height: 1.5;
   margin-bottom: 16px;
-  color: #00f3ff; /* Azul neón */
+  color: #00f3ff;
   text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
 }
 
@@ -113,98 +113,4 @@ body {
   height: auto;        
   z-index: 5;
   transition: transform 0.2s ease;
-}
-
-.cohete.despegar {
-  animation: despegarCohete 2.2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
-}
-
-@keyframes despegarCohete {
-  0% {
-    bottom: 250px;
-    transform: translateX(-50%) scale(1);
-  }
-  20% {
-    bottom: 230px; 
-    transform: translateX(-50%) scale(1.05);
-  }
-  100% {
-    bottom: 120vh; 
-    transform: translateX(-50%) scale(0.6);
-  }
-}
-
-/* --- ESTRELLAS FUGACES --- */
-.estrella-fugaz {
-  position: absolute;
-  width: 120px; 
-  height: 2px;  
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  opacity: 0;
-  pointer-events: none; 
-  z-index: 2; 
-}
-
-.ef-1 {
-  top: 15%;
-  left: 75%;
-  animation: pasarEstrella 3s ease-in-out infinite;
-  animation-delay: 1s; 
-}
-
-.ef-2 {
-  top: 30%;
-  left: 90%;
-  animation: pasarEstrella 2.5s ease-in-out infinite;
-  animation-delay: 5s; 
-}
-
-.ef-3 {
-  top: 5%;
-  left: 50%;
-  animation: pasarEstrella 4s ease-in-out infinite;
-  animation-delay: 8s;
-}
-
-@keyframes pasarEstrella {
-  0% {
-    transform: translateX(0) translateY(0) rotate(-45deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-500px) translateY(500px) rotate(-45deg);
-    opacity: 0;
-  }
-}
-
-/* --- COHETE Y FÍSICAS DE DESPEGUE --- */
-.cohete {
-  position: absolute;
-  bottom: 250px; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;       
-  max-width: 120px;     
-  height: auto;        
-  z-index: 5;
-  transition: transform 0.2s ease;
-}
-
-.cohete.despegar {
-  animation: despegarCohete 2.2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
-}
-
-@keyframes despegarCohete {
-  0% {
-    bottom: 250px;
-    transform: translateX(-50%) scale(1);
-  }
-  20% {
-    bottom: 230px; 
-    transform: translateX(-50%) scale(1.05);
-  }
-  100% {
-    bottom: 120vh; 
-    transform: translateX(-50%) scale(0.6);
-  }
 }
